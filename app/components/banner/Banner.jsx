@@ -4,6 +4,7 @@ import React from 'react'
 import { Section } from "../Section"
 
 import { Element } from './Element'
+import { SwiperComponent } from './Swiper';
 
 
 
@@ -19,6 +20,10 @@ export default async function Banner({ posts }) {
 
     return (
         <>
+            <SwiperComponent
+                spaceBetween={20}
+                slidesPerView={"auto"}
+            >
                 {
                     data.map((element, index) => {
                         return (
@@ -37,6 +42,7 @@ export default async function Banner({ posts }) {
                         )
                     })
                 }
+            </SwiperComponent>
         </>
 
 
