@@ -6,7 +6,7 @@ import Link from 'next/link'
 const Navigation = () => {
   return (
     <nav>
-      <ul className={`flex [&>*]:mr-7 [&>*]:text-[#C6C4C4] [&>*:last-child]:mr-0`}>
+      <ul className={`flex [&>*]:mr-7 [&>*]:text-grey [&>*:last-child]:mr-0`}>
         <li>
           <Link href={"/"}>Home</Link>
         </li>

@@ -41,3 +41,24 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+
+
+.fade-effect__top {
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0, .4) 1%, rgba(0, 0, 0, 0) 80%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.fade-effect__bottom {
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0,0,0,1) 100%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+}

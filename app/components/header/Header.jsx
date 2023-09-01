@@ -6,15 +6,17 @@ import Section from '../Section'
 
 const Header = () => {
   return (
-    <header className={`fixed w-full py-4`}>
-      <Section>
-        <div className={`flex justify-between items-center`}>
-          <Logo />
-          <Navigation />
-          <Action />
-        </div>
-      </Section>
-    </header>
+    <>
+      <header className={`fixed w-full py-4 z-20`}>
+        <Section>
+          <div className={`flex justify-between items-center`}>
+            <Logo />
+            <Navigation />
+            <Action />
+          </div>
+        </Section>
+      </header>
+    </>
   )
 }
 
