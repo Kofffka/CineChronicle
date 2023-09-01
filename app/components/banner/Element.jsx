@@ -5,14 +5,14 @@ import Section from "../Section"
 
 
 
-export const Element = (props) => {
+export const Element = ({ poster, title, imdbID, year, runtime, plot, imdbRating, language, type, genre }) => {
 
 
 
     return (
-        <>
+        <div>
             <div className='absolute w-full h-full'>
-                <Image className={` w-full h-full object-fill`} loading={"lazy"}  width={1920} height={1080} src={data.poster} alt="Disney Poster" fill={false} />
+                <Image className={` w-full h-full object-fill`} loading={"lazy"}  width={1920} height={1080} src={poster} alt="Disney Poster" fill={false} />
             </div>
 
 
@@ -26,26 +26,26 @@ export const Element = (props) => {
 
                     <div className={`mb-4`}>
                         <ul className={`flex`}>
-                            <li className={` bg-black text-white rounded-lg px-2 py-1 mr-3`}>{data?.type}</li>
-                            <li className={` bg-black text-white rounded-lg px-2 py-1`}>{data?.imdbRating}</li>
+                            <li className={` bg-black text-white rounded-lg px-2 py-1 mr-3`}>{type}</li>
+                            <li className={` bg-black text-white rounded-lg px-2 py-1`}>{imdbRating}</li>
                         </ul>
                     </div>
 
                     <div className={`mb-4`}>
                         <span className={`text-white text-4xl`}>
-                            {data?.title}
+                            {title}
                         </span>
                     </div>
                     <div className={`mb-4`}>
                         <ul className={`flex`}>
-                            <li className={`mr-4 text-sm-info`}>{data?.runtime}</li>
-                            <li className={`mr-4 text-sm-info`}>{data?.year}</li>
-                            <li className={`mr-4 text-sm-info`}>{data?.genre}</li>
+                            <li className={`mr-4 text-sm-info`}>{runtime}</li>
+                            <li className={`mr-4 text-sm-info`}>{year}</li>
+                            <li className={`mr-4 text-sm-info`}>{genre}</li>
                         </ul>
                     </div>
                     <div className={`w-[90%] mb-5`}>
                         <p className={`text-base text-grey`}>
-                            {data?.plot}
+                            {plot}
                         </p>
                     </div>
 
@@ -63,7 +63,7 @@ export const Element = (props) => {
                 </div>
             </Section>
 
-        </>
+        </div>
     )
 }
 
