@@ -19,6 +19,7 @@ export default async function Banner({ posts }) {
 
     return (
         <>
+        <div className={`mb-20`}>
         <CarouselComponent>
             {
                 data.map((element, index) => {
@@ -39,6 +40,7 @@ export default async function Banner({ posts }) {
                 })
             }
         </CarouselComponent>
+        </div>
         </>
     )
 }

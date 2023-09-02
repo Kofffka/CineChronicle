@@ -18,11 +18,11 @@ export const Element = ({ poster, title, imdbID, year, runtime, plot, imdbRating
 
 
 
-            <Section position={true} style="flex items-end ">
+            <Section position={true}  style="flex items-end ">
                 <div className="fade-effect__top"></div>
                 <div className="fade-effect__bottom"></div>
 
-                <div className={`w-[50%] h-[40vh] z-10 `}>
+                <div className={`w-[50%] z-10  text-left`}>
 
                     <div className={`mb-4`}>
                         <ul className={`flex`}>
@@ -50,7 +50,7 @@ export const Element = ({ poster, title, imdbID, year, runtime, plot, imdbRating
                     </div>
 
 
-                    <div className={`mb-4`}>
+                    <div className={`mb-20`}>
                         <button className={`border rounded-md border-solid border-white py-3 px-4 mr-6 bg-[#00925D]`}>
                             <i></i>
                             <p>Watch Trailer</p>

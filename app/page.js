@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import Banner from './components/banner/Banner'
 import Section from './components/Section'
 import getBannerPost from './service/getBannerPost'
+import Brand from './components/brand/Brand'
 
 
 
@@ -21,6 +22,9 @@ export default async function Home() {
     <>
       <Section modify={false} position={true}>
         <Banner />
+      </Section>
+      <Section>
+        <Brand />
       </Section>
     </>
   )
