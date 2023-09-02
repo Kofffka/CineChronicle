@@ -8,7 +8,7 @@ const Brand = () => {
             {
                 BrandCollection.map((element, index) => {
                     return (
-                        <div key={index}>
+                        <div className={``} key={index}>
                             <img src={element.src} alt={element.alt} />
                         </div>
                     )
