@@ -7,7 +7,7 @@ export default async function FilmList() {
     let data = await getAllFilms()
 
     return (
-        <div>FilmList</div>
+        <div></div>
     )
 }
 
