@@ -10,7 +10,8 @@ import "../../globals.css"
 export const CarouselComponent = ({ children }) => {
     return (
         <Carousel
-
+        autoPlay={true}
+        interval={10000}
             swipeScrollTolerance={5}
             showThumbs={false}
             showStatus={false}

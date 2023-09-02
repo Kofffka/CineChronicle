@@ -4,6 +4,7 @@ import Banner from './components/banner/Banner'
 import Section from './components/Section'
 import getBannerPost from './service/getBannerPost'
 import Brand from './components/brand/Brand'
+import FilmList from './components/filmList/FilmList'
 
 
 
@@ -25,6 +26,9 @@ export default async function Home() {
       </Section>
       <Section>
         <Brand />
+      </Section>
+      <Section>
+        <FilmList />
       </Section>
     </>
   )

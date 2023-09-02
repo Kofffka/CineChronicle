@@ -6,25 +6,35 @@ import  StarWars  from "../../../public/brand/StarWars.png"
 
 
 
+// export const BrandCollection = [
+//     {
+//         src: Disney,
+//         alt: "Disney Brand Logo"
+//     },
+//     {
+//         src: Marvel,
+//         alt: "Marvel Brand Logo"
+//     },
+//     {
+//         src: NGeograp,
+//         alt: "National Geograp Brand Logo"
+//     },
+//     {
+//         src: Pixar,
+//         alt: "Pixar Brand Logo"
+//     },
+//     {
+//         src: StarWars,
+//         alt: "StarWars Brand Logo"
+//     }
+// ]
+
+
 export const BrandCollection = [
-    {
-        src: Disney,
-        alt: "Disney Brand Logo"
-    },
-    {
-        src: Marvel,
-        alt: "Marvel Brand Logo"
-    },
-    {
-        src: NGeograp,
-        alt: "National Geograp Brand Logo"
-    },
-    {
-        src: Pixar,
-        alt: "Pixar Brand Logo"
-    },
-    {
-        src: StarWars,
-        alt: "StarWars Brand Logo"
-    }
+    Disney,
+    Marvel,
+    NGeograp,
+    Pixar,
+    StarWars,
 ]
+
