@@ -1,13 +1,16 @@
 import React from 'react'
-import getAllFilms from '@/app/service/getAllFilms'
+// import getAllFilms from '@/app/service/getAllFilms'
+import { data } from '@/app/service/getAllFilms'
 
 
 export default async function FilmList() {
 
-    let data = await getAllFilms()
+
 
     return (
-        <div></div>
+        <div>
+
+        </div>
     )
 }
 
