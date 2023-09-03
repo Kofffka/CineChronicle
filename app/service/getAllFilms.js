@@ -4,4 +4,3 @@ export default async function getAllFIlms () {
 }
 
 
-export const data = getBannerPost ()
