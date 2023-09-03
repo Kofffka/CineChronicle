@@ -2,7 +2,7 @@ import React from 'react'
 
 const Wrapper = ({ children }) => {
     return (
-        <section className={`py-36`}>
+        <section className={`relative py-36 h-screen`}>
             {children}
         </section>
     )
