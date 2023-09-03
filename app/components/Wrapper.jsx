@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Wrapper = () => {
+const Wrapper = ({ children }) => {
     return (
-        <section className={`py-9`}>
-sdgs
+        <section className={`relative py-36 h-screen`}>
+            {children}
         </section>
     )
 }
