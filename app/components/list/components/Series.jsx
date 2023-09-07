@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import Base_Card from '../../card_layout/base_card'
 
+
 export default async function Series() {
 
   let { page: page, results: data } = await getDiscover("tv")

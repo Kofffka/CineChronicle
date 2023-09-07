@@ -11,6 +11,7 @@ const Pagination = () => {
     
     const hadnleChangeNext = () => {
         setPrev(prev + 1)
+        
     }
     
 

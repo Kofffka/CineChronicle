@@ -12,7 +12,7 @@ export const metadata = {
 }
 
 export default async function Discover() {
-  const { page: page, results: data } = await getDiscover("movie")
+  const { page: page, results: data } = await getTest("movie")
 
 
 
