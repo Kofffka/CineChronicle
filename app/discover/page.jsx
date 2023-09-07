@@ -1,34 +1,43 @@
 import React from 'react'
-import { Inter } from 'next/font/google'
 import Wrapper from '../components/Wrapper'
 
 import Link from 'next/link'
-import Image from 'next/image'
-import getAllFIlms from '../service/getAllFilms'
+import getDiscover from '../service/api/movie/getDiscover'
+import Base_Card from '../components/card_layout/base_card'
+import Section from '../components/Section'
+
 
 export const metadata = {
   title: 'Discover',
 }
 
+export default async function Discover() {
+  const { page: page, results: data } = await getDiscover("movie")
 
-export default async function Discover () {
 
-  const data = await getAllFIlms()
+
 
   return (
     <>
       <Wrapper>
-        <ul>
-          {data.map ((element,index) => {
-            return (
-              <li key={index}><Link href={`/discover/${element.title}`}>
-                {element.title}: {element.id}
-                </Link></li>
-            )
-          })}
-        </ul>
+        <Section>
+          <div className={`w-full grid grid-cols-3  gap-6  `}>
+            {data.map((element, index) => {
+              return (
+                  <Link key={index} href={`/discover/${element.id}`} className={`w-full relative overflow-hidden rounded-t-lg  `}>
+                    <Base_Card
+                      {...element}
+                      slice_to={4}
+                    />
+                  </Link>
+              )
+            })}
+          </div>
+        </Section>
       </Wrapper>
     </>
   )
 }
+
+
 

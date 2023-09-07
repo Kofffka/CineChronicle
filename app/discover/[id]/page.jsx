@@ -1,16 +1,16 @@
 ;
 import Section from "@/app/components/Section";
-import getAllFIlms from "@/app/service/getAllFilms";
-import getFilmsByTitle from "@/app/service/getFilmsByTitle";
+import getDiscover from "@/app/service/api/movie/getDiscover";
+
 import React from "react";
 import Banner from "./Banner";
 import Similar from "./Similar";
 import StoryLine from "./StoryLine";
-import TopCast from "./TopCast";
 
 
 export async function generateStaticParams() {
-    const res = await getAllFIlms()
+    const {results:res} = await getDiscover("movie")
+
     return res.map(post => {
         return {
             slug: post.title.toString()
@@ -23,31 +23,26 @@ export async function generateStaticParams() {
 
 export default async function Page({ params: { id } }) {
 
-    const res = await getFilmsByTitle(id)
-
-    let [data] = res
-    let { title, year, cast, genres, extract, thumbnail } = data
+    const {results:res} = await getDiscover("movie")
+    console.log(res)
 
 
 
     return (
         <div>
             <Banner
-                title={title}
-                year={year}
-                genres={genres}
-                thumbnail={thumbnail}
+                {...res}
             />
             <Section>
                 <StoryLine
-                    extract={extract}
+                {...res}
                 />
-                <TopCast
-                    cast={cast}
-                />
+                {/* <TopCast
+                {...res}
+                /> */}
             </Section>
             <Similar
-                genres={genres}
+                {...res}
             />
         </div>
 

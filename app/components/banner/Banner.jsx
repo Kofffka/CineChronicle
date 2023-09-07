@@ -1,10 +1,9 @@
 
-import getBannerPost from '@/app/service/getBannerPost'
+import getMovie_List from '@/app/service/api/movie/getMovie_List';
 import React from 'react'
-import { Section } from "../Section"
 import { CarouselComponent } from './Carousel';
 
-import { Element } from './Element'
+import Element  from './Element'
 
 
 
@@ -13,34 +12,24 @@ export const revalidate = 10;
 
 export default async function Banner({ posts }) {
 
-    let data = await getBannerPost()
-
-
+    let { results: data } = await getMovie_List("popular")
 
     return (
         <>
-        <div className={`mb-20`}>
-        <CarouselComponent>
-            {
-                data.map((element, index) => {
-                    return (
-                            <Element
-                            key={index}
-                                poster={element.Poster}
-                                title={element.Title}
-                                imdbID={element.imdbID}
-                                imdbRating={element.imdbRating}
-                                year={element.Year}
-                                runtime={element.Runtime}
-                                plot={element.Plot}
-                                genre={element.Genre}
-                                type={element.Type}
-                            />
-                    )
-                })
-            }
-        </CarouselComponent>
-        </div>
+            <div className={`mb-20`}>
+                <CarouselComponent>
+                    {
+                        data.map((element, index) => {
+                            return (
+                                <Element
+                                    key={index}
+                                    {...element}
+                                />
+                            )
+                        })
+                    }
+                </CarouselComponent>
+            </div>
         </>
     )
 }

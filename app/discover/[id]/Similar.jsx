@@ -1,12 +1,12 @@
+import getSImilar from '@/app/service/api/movie/getSimilar'
 import React from 'react'
 
-const Similar = ({genres}) => {
+const Similar = ({id}) => {
 
+  const {results: data} = getSImilar(id)
 
-
-  console.log(genres)
   return (
-    <div>Similar</div>
+    <div>Similar Movies for you</div>
   )
 }
 

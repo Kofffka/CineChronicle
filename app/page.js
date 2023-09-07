@@ -1,10 +1,8 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import Banner from './components/banner/Banner'
 import Section from './components/Section'
-import getBannerPost from './service/getBannerPost'
 import Brand from './components/brand/Brand'
-import FilmList from './components/filmList/FilmList'
+import List from './components/list/List'
 
 
 
@@ -28,7 +26,7 @@ export default async function Home() {
         <Brand />
       </Section>
       <Section>
-        <FilmList />
+        <List />
       </Section>
     </>
   )
