@@ -1,10 +1,3 @@
-
-
-
-// https://api.themoviedb.org/3/movie/734253/similar?language=en-US&page=1
-
-
-
 export default async function getTrending(list, time_window) {
 
     // movie | tv for TS
@@ -22,3 +15,6 @@ export default async function getTrending(list, time_window) {
     let res = await fetch(`${process.env.REACT_APP_BASE_URL.toString()}` + `${url}`, options, { cache: "no-cache" })
     return res.json()
 }
+
+
+// https://api.themoviedb.org/3/trending/movie/day?language=en-US

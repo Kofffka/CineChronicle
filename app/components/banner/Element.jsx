@@ -25,7 +25,7 @@ import getGenre from "@/app/lib/get_current_genre"
 // }
 
 
-export default function Element({ title, original_language, overview, backdrop_path, poster_path, popularity, release_date, video, media_type, genre_ids, vote_average }) {
+export default function Element({ title, original_language, overview, backdrop_path, poster_path, popularity, release_date, video, media_type, genre_ids, vote_average, id }) {
 
 
     const genre_data = getGenre(genre_ids)
@@ -82,7 +82,7 @@ export default function Element({ title, original_language, overview, backdrop_p
 
                     <div className={`mb-20`}>
                         <button className={`border rounded-md border-solid border-white py-3 px-4 mr-6 bg-[#00925D]`}>
-                            <Link href={`/discover/${title}`}>
+                            <Link href={`/discover/search/${id}`}>
                                 <i></i>
                                 <p>
                                     {

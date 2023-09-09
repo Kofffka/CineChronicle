@@ -22,7 +22,7 @@ export default async function Movies() {
         {
           data.map((element, index) => {
             return (
-              <Link key={index} href={`/discover/${`movies`}`} className={`relative w-[400px] mr-4`}>
+              <Link key={index} href={`/discover/${`search`}/${element.id}`} className={`relative w-[400px] mr-4`}>
                 <Base_Card
                   {...element}
                 />

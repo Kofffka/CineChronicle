@@ -12,7 +12,7 @@ export default async function Series() {
   return (
     <div className={`relative`}>
       <div className={`mb-4`}>
-        <Link href={`/discover/${"movies"}`}>
+        <Link href={`/discover/${"series"}`}>
           <span className={`text-white text-2xl`}>
             Series
           </span>
@@ -23,7 +23,7 @@ export default async function Series() {
         {
           data.map((element, index) => {
             return (
-              <Link key={index} href={`/discover/${`series`}`} className={`relative w-[400px] mr-4`}>
+              <Link key={index} href={`/discover`} className={`relative w-[400px] mr-4`}>
                 <Base_Card
                   {...element}
                 />

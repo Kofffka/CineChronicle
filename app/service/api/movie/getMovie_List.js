@@ -4,7 +4,7 @@ export default async function getMovie_List(list) {
 
     const language = "language=en-US"
     let page_params = `&page=${1}`
-
+    const url = `movie/${list}?language=en-US${page_params}`
 
 
     const options = {
@@ -14,8 +14,10 @@ export default async function getMovie_List(list) {
             Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
         }
     };
-    let res = await fetch(`${process.env.REACT_APP_BASE_URL.toString()}` + `movie/${list}?${language}${page_params}`, options, { cache: "no-cache" })
+    let res = await fetch(`${process.env.REACT_APP_BASE_URL.toString()}` + url, options, { cache: "no-cache" })
     return res.json()
 }
 // https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1 DELETE!!!
+
+// https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1 
 
