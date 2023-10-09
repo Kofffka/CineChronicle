@@ -18,9 +18,10 @@ export default async function getMovies(list, tmdb_id) {
         headers: {
             accept: 'application/json',
             Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
-        }
+        },
+        cache: 'no-store' 
     };
-    let res = await fetch(`${process.env.REACT_APP_BASE_URL.toString()}` + `${url}`, options, { cache: "no-cache" })
+    let res = await fetch(`${process.env.REACT_APP_BASE_URL.toString()}` + `${url}`, options )
     return res.json()
 }
 

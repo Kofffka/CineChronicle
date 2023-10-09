@@ -12,9 +12,10 @@ export default async function getMovie_List(list) {
         headers: {
             accept: 'application/json',
             Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
-        }
+        },
+        cache: 'no-store' 
     };
-    let res = await fetch(`${process.env.REACT_APP_BASE_URL.toString()}` + url, options, { cache: "no-cache" })
+    let res = await fetch(`${process.env.REACT_APP_BASE_URL.toString()}` + `${url}`, options )
     return res.json()
 }
 // https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1 DELETE!!!

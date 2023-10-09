@@ -1,25 +1,24 @@
 import Base_Card from '@/app/components/card_layout/base_card'
+import getSimilar from '@/app/service/api/movie/getSimilar'
+
 import Link from 'next/link'
 import React from 'react'
+import Carousel from '../../../components/Carousel'
 
-const Recommendations = ({recommendations}) => {
-    const { page: page, results: results } = recommendations
+const Recommendations = ({ recommendations }) => {
+  
+  const { page: page, results: results } = recommendations
 
-
-    return (
-      <>
-        <div>Similar Movies for You</div>
-        <div className='grid'>
-          {results.map((element, index) => {
-            return (
-              <Link href={`/discover/search/${element.id}`} key={index} className={`grid-cols-3`}>
-                <Base_Card {...element} />
-              </Link>
-            )
-          })}
-        </div>
-      </>
-    )
+  return (
+    <>
+      <div className={`mb-4`}>
+        <span className={`text-white text-2xl`}>Recomentadions Movies for You</span>
+      </div>
+      <div className='relative h-[200px]'>
+        <Carousel results={results} />
+      </div>
+    </>
+  )
 }
 
 export default Recommendations

@@ -15,7 +15,7 @@ export default async function getMovieGenre() {
             Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
         }
     };
-    let res = await fetch(`${process.env.REACT_APP_BASE_URL.toString()}` + `genre/${genres.movie}/list?${language}`, options, { cache: "no-cache" })
+    let res = await fetch(`${process.env.REACT_APP_BASE_URL}` + `genre/${genres.movie}/list?${language}`, options, { cache: "no-cache" })
     return res.json()
 }
 

@@ -4,7 +4,7 @@ import getMovie_List from '@/app/service/api/movie/getMovie_List';
 import getTrending from '@/app/service/api/movie/getTrending';
 
 import React from 'react'
-import { CarouselComponent } from './Carousel';
+import CarouselBanner from './CarouselBanner';
 
 import Element  from './Element'
 
@@ -20,18 +20,7 @@ export default async function Banner({ posts }) {
     return (
         <>
             <div className={`mb-20`}>
-                <CarouselComponent>
-                    {
-                        data.map((element, index) => {
-                            return (
-                                <Element
-                                    key={index}
-                                    {...element}
-                                />
-                            )
-                        })
-                    }
-                </CarouselComponent>
+                <CarouselBanner results={data} />
             </div>
         </>
     )

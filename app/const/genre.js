@@ -5,8 +5,11 @@ import getMovieGenre from "../service/api/movie/getMovieGenre";
 let GENRE = new Object();
 
 (async function () {
+
     let data = await getMovieGenre()
     GENRE.genres = data.genres
+
+    console.log(GENRE)
 })();
 
 export default GENRE;

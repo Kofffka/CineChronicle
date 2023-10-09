@@ -1,24 +1,24 @@
 import Base_Card from '@/app/components/card_layout/base_card'
-import getSImilar from '@/app/service/api/movie/getMovies'
+import getSimilar from '@/app/service/api/movie/getSimilar'
+
 import Link from 'next/link'
 import React from 'react'
+import Carousel from '../../../components/Carousel'
 
 const Similar = ({ similar }) => {
 
   const { page: page, results: results } = similar
 
 
+
   return (
     <>
-      <div>Similar Movies for You</div>
-      <div className='grid'>
-        {results.map((element, index) => {
-          return (
-            <Link href={`/discover/search/${element.id}`} key={index} className={`grid-cols-3`}>
-              <Base_Card {...element} />
-            </Link>
-          )
-        })}
+
+      <div className={`mb-4`}>
+        <span className={`text-white text-2xl`}>Similar Movies for You</span>
+      </div>
+      <div className='relative h-[200px]'>
+        <Carousel results={results} />
       </div>
     </>
   )

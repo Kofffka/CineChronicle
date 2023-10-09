@@ -2,17 +2,20 @@ import React from 'react'
 import Image from 'next/image'
 import { IMAGE_SIZE } from '@/app/const/size'
 import { base_image_path } from '@/app/const/base_image_path'
-import getGenre from '@/app/lib/get_current_genre'
 
 
 
-const Base_Card = ({ title, name, genre_ids, backdrop_path, poster_path }) => {
-    const genre_data = getGenre(genre_ids)
+
+const Base_Card = ({data}) => {
+
+    const { title: title, name: name,  backdrop_path: backdrop_path, vote_average: vote_average, id: id } = data
+
+
     return (
         // w-full / 64
-        <>
-            <div className='relative  w-full h-auto'> 
-                <Image className={``} loading={"lazy"} width={IMAGE_SIZE.Backdrop.width} height={IMAGE_SIZE.Backdrop.height} src={base_image_path + `w${IMAGE_SIZE.Backdrop.width}` + backdrop_path} alt={`${title} poster`} fill={false} />
+        <div className={``}>
+            <div className='relative w-full mb-4'> 
+                <Image className={`w-full h-[150px] object-fill`} loading={"lazy"} width={200} height={200} src={base_image_path + `w${IMAGE_SIZE.Poster.width}` + backdrop_path} alt={`${title} poster`} fill={false} />
                 <div className="fade-effect__bottom"></div>
             </div>
             <div className={`mb-2 `}>
@@ -20,7 +23,7 @@ const Base_Card = ({ title, name, genre_ids, backdrop_path, poster_path }) => {
                     {title || name}
                 </p>
             </div>
-            <div>
+            {/* <div>
                 <ul className={`flex`}>
                     {
                         genre_data.slice(0, 2).map((element, index) => {
@@ -30,8 +33,8 @@ const Base_Card = ({ title, name, genre_ids, backdrop_path, poster_path }) => {
                         })
                     }
                 </ul>
-            </div>
-        </>
+            </div> */}
+        </div>
     )
 }
 

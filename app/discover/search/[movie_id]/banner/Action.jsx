@@ -7,7 +7,7 @@ const Action = ({ video }) => {
                 <i></i>
                 <p>
                     {
-                        video ? "Watch Trailer" : "SignIn or SignUp"
+                        video ? "Watch Trailer" : "Play Now"
                     }
                 </p>
             </button>

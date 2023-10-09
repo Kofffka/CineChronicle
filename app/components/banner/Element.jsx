@@ -28,7 +28,7 @@ import getGenre from "@/app/lib/get_current_genre"
 export default function Element({ title, original_language, overview, backdrop_path, poster_path, popularity, release_date, video, media_type, genre_ids, vote_average, id }) {
 
 
-    const genre_data = getGenre(genre_ids)
+    // const genre_data = getGenre(genre_ids)
 
 
     return (
@@ -62,15 +62,15 @@ export default function Element({ title, original_language, overview, backdrop_p
                         <ul className={`flex`}>
                             <li className={`mr-4 text-sm-info`}>{vote_average}</li>
                             <li className={`mr-4 text-sm-info`}>{release_date}</li>
-                            <ul className={`flex`}>
+                            {/* <ul className={`flex`}>
                                 {
-                                    genre_data.map((element, index) => {
+                                   genre_data.map((element, index) => {
                                         return (
                                             <li key={index} className={`mr-4 text-sm-info`}>{element}</li>
                                         )
                                     })
                                 }
-                            </ul>
+                            </ul> */}
                         </ul>
                     </div>
                     <div className={`w-[90%] mb-5`}>

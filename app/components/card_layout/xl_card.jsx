@@ -8,7 +8,8 @@ const XL_Card = ({ title, genre_ids, backdrop_path, poster_path }) => {
     return (
         <div>
             <div className=''>
-                <Image className={``} loading={"lazy"} width={IMAGE_SIZE.Backdrop.width} height={IMAGE_SIZE.Poster.height} src={base_image_path + `w${IMAGE_SIZE.Poster.width}` + backdrop_path} alt={`${title} poster`} fill={false} />
+                <Image className={`w-full h-[150px] object-fill`} loading={"lazy"} width={200} height={200} src={base_image_path + `w${IMAGE_SIZE.Poster.width}` + backdrop_path} alt={`${title} poster`} fill={false} />
+                <div className="fade-effect__bottom"></div>
             </div>
             <div>
                 <span>
@@ -19,4 +20,5 @@ const XL_Card = ({ title, genre_ids, backdrop_path, poster_path }) => {
     )
 }
 
-export default XL_Card
+export default XL_Card  
+

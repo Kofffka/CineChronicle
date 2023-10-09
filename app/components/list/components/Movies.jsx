@@ -1,11 +1,14 @@
+import getGenre from '@/app/lib/get_current_genre'
 import getDiscover from '@/app/service/api/movie/getDiscover'
 import Link from 'next/link'
 import React from 'react'
 import Base_Card from '../../card_layout/base_card'
+import Carousel from '../../Carousel'
+import CarouselList from '../../CarouselList'
 
 export default async function Movies() {
 
-  let { page:page, results: data } = await getDiscover("movie")
+  let { page: page, results: results } = await getDiscover("movie")
 
 
   return (
@@ -17,20 +20,7 @@ export default async function Movies() {
           </span>
         </Link>
       </div>
-      <div className={`flex`}>
-
-        {
-          data.map((element, index) => {
-            return (
-              <Link key={index} href={`/discover/${`search`}/${element.id}`} className={`relative w-[400px] mr-4`}>
-                <Base_Card
-                  {...element}
-                />
-              </Link>
-            )
-          })
-        }
-      </div>
+      <Carousel results={results}  />
     </div>
   )
 }
@@ -38,3 +28,16 @@ export default async function Movies() {
 
 // border-2 border-solid border-white overflow-hidden
 // border-2 border-solid border-cyan-500
+
+
+// {
+//   data.map((element, index) => {
+//     return (
+//       <Link key={index} href={`/discover/${`search`}/${element.id}`} className={`relative w-[400px] mr-4`}>
+//         <Base_Card
+//           {...element}
+//         />
+//       </Link>
+//     )
+//   })
+// }

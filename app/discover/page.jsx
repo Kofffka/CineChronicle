@@ -26,7 +26,7 @@ export default async function Discover() {
               return (
                   <Link key={index} href={`/discover/${element.id}`} className={`w-full relative overflow-hidden rounded-t-lg  `}>
                     <Base_Card
-                      {...element}
+                      data={element}
                       slice_to={4}
                     />
                   </Link>

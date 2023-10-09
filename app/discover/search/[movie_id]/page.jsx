@@ -17,6 +17,8 @@ export default async function Page({ params: { movie_id } }) {
 
 
 
+
+
   return (
     <div>
       <div>
@@ -27,17 +29,17 @@ export default async function Page({ params: { movie_id } }) {
       <Section>
         <div>
           <Credit
-            credits={...credits}
+            credits={credits}
           />
         </div>
-        <div>
+        <div className={`mb-16`}>
           <Similar
-            similar={...similar}
+            similar={similar}
           />
         </div>
         <div>
           <Recommendations
-            recommendations={...recommendations}
+            recommendations={recommendations}
           />
         </div>
       </Section>

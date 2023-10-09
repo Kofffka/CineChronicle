@@ -2,11 +2,13 @@ import getDiscover from '@/app/service/api/movie/getDiscover'
 import Link from 'next/link'
 import React from 'react'
 import Base_Card from '../../card_layout/base_card'
+import Carousel from '../../Carousel'
+import CarouselList from '../../CarouselList'
 
 
 export default async function Series() {
 
-  let { page: page, results: data } = await getDiscover("tv")
+  let { page: page, results: results } = await getDiscover("tv")
 
 
   return (
@@ -18,20 +20,7 @@ export default async function Series() {
           </span>
         </Link>
       </div>
-      <div className={`flex`}>
-
-        {
-          data.map((element, index) => {
-            return (
-              <Link key={index} href={`/discover`} className={`relative w-[400px] mr-4`}>
-                <Base_Card
-                  {...element}
-                />
-              </Link>
-            )
-          })
-        }
-      </div>
+      <Carousel results={results} />
     </div>
   )
 }
